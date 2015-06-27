@@ -29,7 +29,17 @@
   		</nav>
   		
   		<section class="main" id="s1">
-  		<div><%- body %></div>
+  		   <!-- <div><%- body %></div>-->
+         <% if (errors.length) {%>
+         <span id='ErrorMsg'>
+            Corregir errores:<br/>
+            <% for (var i in errors) {%>
+              <span><%= errors[i].message %></span><br/>
+            <% } %>
+         </span>
+         <% } %>
+         
+         <div><%- body %>
   		</section>
   		
   		<footer class="main" id="f1">
